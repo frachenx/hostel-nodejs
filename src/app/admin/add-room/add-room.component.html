@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <h1>Add Room</h1>
+        <form #form="ngForm" (ngSubmit)="submit(); form.resetForm()">
+            <div *ngIf="result == '1' " class="alert alert-success">Room Added Correctly</div>
+            <div *ngIf="result == '0' " class="alert alert-danger">Failed To Add Room</div>
+            <div class="form-group d-flex">
+                <span class="input-group-text">Seater</span>
+                <select [(ngModel)]="room.seater" name="seater" id="seater" class="form-control">
+                    <option value=""></option>
+                    <option value="1">One Seater</option>
+                    <option value="2">Two Seater</option>
+                    <option value="3">Three Seater</option>
+                    <option value="4">Four Seater</option>
+                    <option value="5">Five Seater</option>
+                </select>
+            </div>
+            <div class="form-group d-flex">
+                <span class="input-group-text">Room No.</span>
+                <input [(ngModel)]="room.roomNumber" type="text" name="num" id="num" class="form-control">
+            </div>
+            <div class="form-group d-flex">
+                <span class="input-group-text">Room Fee</span>
+                <input [(ngModel)]="room.fee" type="text" name="fee" id="fee" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary col-12">
+            </div>
+        </form>
+    </div>
+</div>

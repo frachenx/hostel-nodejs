@@ -1,0 +1,42 @@
+<div class="bg-light rounded" id="sidebar">
+  <!--Sidebar-->
+  <ul class="nav nav-pills flex-column list-unstyled text-justify" [ngSwitch]="sidebarItemsVar">
+    <!--***************************************NOT SIGNED IN****************************************-->
+    <div *ngSwitchCase="'0'">
+      <app-sidebar-item [title]="'User Registration'" [url]="'/registration'" [icon]="'fas fa-book'">
+      </app-sidebar-item>
+      <app-sidebar-item [title]="'User Login'" [url]="'/user-login'" [icon]="'fas fa-sign-out-alt'">
+      </app-sidebar-item>
+      <app-sidebar-item [title]="'Admin Login'" [url]="'/admin-login'" [icon]="'fas fa-user-shield'">
+      </app-sidebar-item>
+    </div>
+    <!--***************************************ADMIN****************************************************-->
+    <div *ngSwitchCase="'1'">
+      <app-sidebar-item [title]="'Dashboard'" [url]="'/dashboard'" [icon]="'fas fa-book'">
+      </app-sidebar-item>
+      <app-sidebar-combo [mainTitle]="'Courses'" [icon]="'fas fa-book-open'"
+        [items]="[{title:'Add Courses', url:'/add-course'},{title:'Manage Courses', url:'/manage-courses'}]">
+      </app-sidebar-combo>
+      <app-sidebar-combo [mainTitle]="'Rooms'" [icon]="'fas fa-chess-rook'"
+        [items]="[{title:'Add Room', url:'/add-room'},{title:'Manage Rooms', url:'/manage-rooms'}]">
+      </app-sidebar-combo>
+      <app-sidebar-item [title]="'Student Registration'" [url]="'/student-registration'" [icon]="'fas fa-info-circle'">
+      </app-sidebar-item>
+      <app-sidebar-item [title]="'Manage Students'" [url]="'/manage-students'" [icon]="'fas fa-user-graduate'">
+      </app-sidebar-item>
+    </div>
+        <!--***************************************USER*******************************************-->
+    <div *ngSwitchCase="'2'">
+      <app-sidebar-item [title]="'Dashboard'" [url]="'/dashboard'" [icon]="'fas fa-book'">
+      </app-sidebar-item>
+      <app-sidebar-item [title]="'Book Hostel'" [url]="'/book-hostel'" [icon]="'fas fa-book-open'">
+      </app-sidebar-item>
+      <app-sidebar-item [title]="'Room Details'" [url]="'/room-details'" [icon]="'fas fa-info-circle'">
+      </app-sidebar-item>
+      <app-sidebar-item [title]="'My Profile'" [url]="'/my-profile'" [icon]="'fas fa-address-card'">
+      </app-sidebar-item>
+      <app-sidebar-item [title]="'Change Password'" [url]="'/change-password'" [icon]="'fas fa-key'">
+      </app-sidebar-item>
+    </div>
+  </ul>
+</div>

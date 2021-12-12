@@ -1,0 +1,47 @@
+<div class="mx-0 px-0">
+    <h1>Student Registration</h1>
+    <form id="myForm" #form ="ngForm" (ngSubmit)="submit(); ">
+        <div class="form-group d-flex" >
+            <span class="input-group-text">Registration No.</span>
+            <input [(ngModel)]="user.regNum" type="text" name="regNum" id="regNum" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">First Name</span>
+            <input [(ngModel)]="user.firstName" type="text" name="firstName" id="firstName" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Middle Name</span>
+            <input [(ngModel)]="user.middleName" type="text" name="middleName" id="middleName" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Last Name</span>
+            <input [(ngModel)]="user.lastName" type="text" name="lastName" id="lastName" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Gender</span>
+            <select [(ngModel)]="user.gender" name="gender" id="gender" class="form-control" [selectedIndex]="'0'">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Contact No.</span>
+            <input [(ngModel)]="user.contactNum" type="tel" name="contactNum" id="contactNum" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Email</span>
+            <input [(ngModel)]="user.email" type="email" name="email" id="email" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Password</span>
+            <input [(ngModel)]="user.password" type="password" name="password" id="password" class="form-control" autocomplete="false">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Confirm Password</span>
+            <input [(ngModel)]="confirmPassword"type="password" name="confirmPassword" id="confirmPassword" class="form-control" autocomplete="false">
+        </div>
+        <input class="btn btn-primary col-12" type="submit" value="Submit">
+    </form>
+</div>

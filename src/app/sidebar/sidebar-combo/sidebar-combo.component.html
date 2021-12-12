@@ -1,0 +1,10 @@
+<li>
+    <button (click)="triggerDrop()" class="btn dropdown-btn"><i class="{{icon}}"></i>
+        {{mainTitle}} <i class="fas fa-caret-down"></i>
+    </button>
+    <div #dropContainer class="dropdown-container">
+        <ul>
+            <li *ngFor="let item of items"><a [routerLink]="[ item.url ]" >{{item.title}}</a></li>
+        </ul>
+    </div>
+</li>

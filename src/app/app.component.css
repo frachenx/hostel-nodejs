@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar{
+    min-height: 100vh;
+    /* height: 100vh;
+    position: fixed; 
+    top: 70px;
+    left: 0px;
+    width: 160px;
+    padding: 0px;
+    margin: 0px;  */
+}
+
+.content{
+    position: relative;
+    /* position: absolute; */
+    /* left: 200px;
+    top: 70px;
+    width: 100%; */
+}
+
+/* .row,.navbar-fixed-top{
+    overflow-x: hidden;
+} */
+

@@ -1,0 +1,31 @@
+export class Student{
+public id:number
+public room:number
+public food:string
+public stayFrom:string
+public duration:string
+public course:string
+public regNum:string
+public fName:string
+public mName:string
+public lName:string
+public gender:string
+public contact:string
+public email:string
+public emContact:string
+public guardName:string
+public guardRel:string
+public guardContact:string
+public corrAddress:string
+public corrCity:string
+public corrState:string
+public corrPin:string
+public permAddress:string
+public permCity:string
+public permState:string
+public permPin:string
+public room_name:string
+public room_seater:string
+public course_name:string
+public room_fee:string
+}

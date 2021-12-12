@@ -1,0 +1,189 @@
+<div *ngIf="!booked" class="mx-5">
+    <h1>Registration</h1>
+    <hr>
+    <h4 class="text-center text-primary">Room Related Info.</h4>
+    <form #form = "ngForm" (ngSubmit)="submit(); form.resetForm()">
+        <div *ngIf="result=='1'" class="alert alert-success">Student Registered Succesfully</div>
+        <div *ngIf="result=='0'" class="alert alert-danger">Failed To Register Student</div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Room No.</span>
+            <select [(ngModel)]="student.room" name="room" id="room" class="form-control" (change)="roomCombo()">
+                <option value=""></option>
+                <option *ngFor="let room of rooms" value="{{room.id}}">{{room.roomNumber}}</option>
+            </select>
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Seater</span>
+            <input [(ngModel)]="student.room_seater" type="text" name="seater" id="seater" class="form-control" readonly="true">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Fees(Per Month)</span>
+            <input [(ngModel)]="student.room_fee" type="text" name="fee" id="fee" class="form-control" readonly="true">
+        </div>
+
+        <div class="form-group row d-flex">
+            <div class="col-2">
+                
+            </div>  
+            <div class="col-2">
+                <input [(ngModel)]="student.food" type="radio" name="food" id="food" value="0"> 
+                Without Food
+            </div>
+            <div class="col-3">
+                <input [(ngModel)]="student.food" type="radio" name="food" id="food" value="1" checked> 
+                With Food(Rs 2000.00 Per Month Extra)
+            </div>
+        </div>
+
+        <div class="form-group d-flex">
+            <span class="input-group-text">Stay From</span>
+            <input [(ngModel)]="student.stayFrom" type="date" name="from" id="from" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Duration</span>
+            <select [(ngModel)]="student.duration" name="duration" id="duration" class="form-control">
+                <option value="">Select Duration In Months</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </div>
+        <hr>
+        <h4 class="text-center text-primary">Personal Info.</h4>
+
+        <div class="form-group d-flex">
+            <span class="input-group-text">Course</span>
+            <select [(ngModel)]="student.course" name="course" id="course" class="form-control">
+                <option value="">Select A Courses</option>
+                <option *ngFor="let course of courses" value="{{course.id}}">{{course.fullName}}</option>
+            </select>
+        </div>
+
+        <div class="form-group d-flex">
+            <span class="input-group-text">Registration No.</span>
+            <input [(ngModel)]="user.regNum" type="text" name="regNum" id="regNum" class="form-control" readonly="true">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">First Name</span>
+            <input [(ngModel)]="user.firstName" type="text" name="firstName" id="firstName" class="form-control" readonly="true">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Middle Name</span>
+            <input [(ngModel)]="user.middleName" type="text" name="middleName" id="middleName" class="form-control" readonly="true">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Last Name</span>
+            <input [(ngModel)]="user.lastName" type="text" name="lastName" id="lastName" class="form-control" readonly="true">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Gender</span>
+            <select [(ngModel)]="user.gender" name="gender" id="gender" class="form-control" readonly="true">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Contact No</span>
+            <input [(ngModel)]="user.contactNum" type="text" name="contact" id="contact" class="form-control" readonly="true">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Email</span>
+            <input [(ngModel)]="user.email" type="text" name="email" id="email" class="form-control" readonly="true">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Emergency Contact</span>
+            <input [(ngModel)]="student.emContact" type="text" name="emContact" id="emContact" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Guardian Name</span>
+            <input [(ngModel)]="student.guardName" type="text" name="guardName" id="guardName" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Guardian Relation</span>
+            <input [(ngModel)]="student.guardRel" type="text" name="guardRel" id="guardRel" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Guardian Contact No.</span>
+            <input [(ngModel)]="student.guardContact" type="text" name="guardContact" id="guardContact" class="form-control">
+        </div>
+
+        <hr>
+        <h4 class="text-center text-primary">Correspondence Address</h4>
+        
+        <div class="form-group d-flex">
+            <span class="input-group-text">Address</span>
+            <textarea [(ngModel)]="student.corrAddress" name="corrAddress" id="corrAddress" cols="30" rows="5" class="form-control"></textarea>
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">City</span>
+            <input [(ngModel)]="student.corrCity" type="text" name="corrCity" id="corrCity" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">State</span>
+            <input [(ngModel)]="student.corrState" type="text" name="corrState" id="corrState" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Pincode</span>
+            <input [(ngModel)]="student.corrPin" type="text" name="corrPin" id="corrPin" class="form-control">
+        </div>
+
+        <hr>
+        <h4 class="text-center text-primary">Permanent Address</h4>
+        
+        <div class="row form-group d-flex">
+            <div class="col-2"></div>
+            <div class="col-6">
+                Permanent Address same as Correspondense address :
+                <input [(ngModel)]="sameAddress" type="checkbox" name="sameAddress" id="sameAddress" checked>
+            </div>
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Address</span>
+            <textarea [(ngModel)]="student.permAddress" name="permAddress" id="permAddress" cols="30" rows="5" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group d-flex">
+            <span class="input-group-text">City</span>
+            <input [(ngModel)]="student.permCity" type="text" name="permCity" id="permCity" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">State</span>
+            <input [(ngModel)]="student.permState" type="text" name="permState" id="permState" class="form-control">
+        </div>
+        <div class="form-group d-flex">
+            <span class="input-group-text">Pincode</span>
+            <input [(ngModel)]="student.permPin" type="text" name="permPin" id="permPin" class="form-control">
+        </div>
+         
+        <div class="form-group d-flex">
+            <input type="submit" value="Register" class="btn btn-primary col-12">
+        </div>
+    </form>
+</div>
+
+<div *ngIf ="booked" class="mx-5 row mt-5">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="alert alert-success text-center">Hostel Booked</div>
+        <div class="card-group user">
+            <div class="card text-center">
+                <i class="fas fa-chess-rook fa-8x"></i>
+                <div class="card-body">
+                    <h5 class="card-title">My Room</h5>
+                    <a [routerLink]="'/room-details'" class="btn btn-primary btn-block">Full Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

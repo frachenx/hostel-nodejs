@@ -1,0 +1,80 @@
+<div class="mx-4">
+    <h1>Room Details</h1>
+    <table class="table table-bordered">
+        <tr>
+            <td colspan="6" class="text-center"><h4>Room Related Info.</h4></td>
+        </tr>
+        <tr>
+            <td><strong>Registration Number :</strong></td>
+            <td>{{student.regNum}}</td>
+            <td><strong>Apply Date :</strong></td>
+            <td colspan="3">{{student.stayFrom}}</td>
+        </tr>
+        <tr>
+            <td><strong>Room no :</strong></td>
+            <td>{{student.room_name}}</td>
+            <td><strong>Seater :</strong></td>
+            <td>{{student.room_seater}}</td>
+            <td><strong>Fees PM :</strong></td>
+            <td>{{student.room_fee}}</td>
+        </tr>
+        <tr>
+            <td><strong>Food Status:</strong></td>
+            <td>{{foodStatus}}</td>
+            <td><strong>Stay From :</strong></td>
+            <td>{{student.stayFrom}}</td>
+            <td><strong>Duration:</strong></td>
+            <td>{{student.duration + " Months"}}</td>
+        </tr>
+        <tr>
+            <td><strong>Hostel Fee:</strong></td>
+            <td colspan="3">{{48000}}</td>
+            <td><strong>Food Fee:</strong></td>
+            <td colspan="3">{{foodFee}}</td>
+        </tr>
+        <tr>
+            <td><strong>Total Fee :	</strong></td>
+            <td>{{totalFee}}</td>
+        </tr>
+        <tr>
+            <td colspan="6" class="text-center"><h4>Personal Info.</h4></td>
+        </tr>
+        <tr>
+            <td><strong>Reg No. :</strong></td>
+            <td>{{student.regNum}}</td>
+            <td><strong>Full Name :	</strong></td>
+            <td>{{student.fName + " " +student.mName  + " " + student.lName}}</td>
+            <td><strong>Email :</strong></td>
+            <td>{{student.email}}</td>
+        </tr>
+        <tr>
+            <td><strong>Contact No. :</strong></td>
+            <td>{{student.contact}}</td>
+            <td><strong>Gender :</strong></td>
+            <td>{{student.gender}}</td>
+            <td><strong>Course :</strong></td>
+            <td>{{student.course_name}}</td>
+        </tr>
+        <tr>
+            <td><strong>Emergency Contact No. :</strong></td>
+            <td>{{student.emContact}}</td>
+            <td><strong>Guardian Name :</strong></td>
+            <td>{{student.guardName}}</td>
+            <td><strong>Guardian Relation :</strong></td>
+            <td>{{student.guardRel}}</td>
+        </tr>
+        <tr>
+            <td><strong>Guardian Contact No. :</strong></td>
+            <td colspan="5">{{student.guardContact}}</td>
+        </tr>
+        <tr>
+            <td colspan="6" class="text-center text-primary"><h4>Adresses</h4></td>
+        </tr>
+        <tr>
+            <td><strong>Correspondense Address	</strong></td>
+            <td colspan="2">{{student.corrAddress + ", " + student.corrCity + ", " + student.corrState + ", " + student.corrPin}}</td>
+            <td><strong>Permanent Address	</strong></td>
+            <td colspan="2">{{student.permAddress + ", " + student.permCity + ", " + student.permState + ", " + student.permPin}}</td>
+        </tr>
+    </table>
+</div>

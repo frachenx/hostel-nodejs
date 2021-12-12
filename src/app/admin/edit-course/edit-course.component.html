@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <h1>Edit Course</h1>
+        <form (ngSubmit)="submit()">
+            <div *ngIf="result=='1'" class="alert alert-success">Course Updated Correctly</div>
+            <div *ngIf="result=='0'" class="alert alert-success">Failed To Update Course</div>
+            <div class="form-group d-flex">
+                <span class="input-group-text">Course Code</span>
+                <input type="text" name="code" id="code" class="form-control" [value]="course.code">
+            </div>
+            <div class="form-group d-flex">
+                <span class="input-group-text">Course Name(Short)</span>
+                <input type="text" name="short" id="short" class="form-control" [value]="course.shortName">
+            </div>
+            <div class="form-group d-flex">
+                <span class="input-group-text">Course Name(Full)</span>
+                <input type="text" name="full" id="full" class="form-control" [value]="course.fullName">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary col-12">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="mx-5">
+    <h1>Manage Rooms</h1>
+    <div class="row">
+        <div class="col-4 d-flex">
+            <span class="input-group-text">Entries</span> 
+            <select [(ngModel)]="numRows" class="form-control" name="numEntries" id="numEntries" (change)="numEntries()">
+                <option value=""></option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4 d-flex">
+            <span class="input-group-text">Search</span>
+            <input [(ngModel)]="search" type="text" name="search" id="search" class="form-control" (change)="searchEntries()">
+        </div>
+    </div>
+    <div *ngIf="resultDelete=='1'" class="alert alert-success">Room Deleted Correctly</div>
+    <div *ngIf="resultDelete=='0'" class="alert alert-success">Failed To Delete Room</div>
+    <table id="myTable" class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Seater</th>
+                <th>Room No.</th>
+                <th>Fees</th>
+                <th>Post Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let room of rooms; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{room.seater}}</td>
+                <td>{{room.roomNumber}}</td>
+                <td>{{room.fee}}</td>
+                <td>{{room.postingDate}}</td>
+                <td class="text-center">
+                    <a [routerLink]="['/edit-room',room.id]" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                    <a (click)="deleteRoom(room.id)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

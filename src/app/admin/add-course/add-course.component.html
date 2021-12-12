@@ -1,0 +1,27 @@
+<div class="row mt-4">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <h1>ADD COURSE</h1>
+        <form #myForm="ngForm" (ngSubmit)="submit(); myForm.resetForm();">
+            <div *ngIf="savedCorrectly=='1'" class="alert alert-success">Course Saved Successfully</div>
+            <div *ngIf="savedCorrectly=='0' " class="alert alert-danger">Course Failed to Saved</div>
+            <div class="form-group d-flex">
+                <span class="input-group-text">Course Code</span>
+                <input [(ngModel)]="course.code" type="text" name="code" id="code" class="form-control">
+            </div>
+
+            <div class="form-group d-flex">
+                <span class="input-group-text">Course Name(Short)</span>
+                <input [(ngModel)]="course.shortName" type="text" name="short" id="short" class="form-control">
+            </div>
+
+            <div class="form-group d-flex">
+                <span class="input-group-text">Course Name(Full)</span>
+                <input [(ngModel)]="course.fullName" type="text" name="full" id="full" class="form-control">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary col-12" type="submit" value="Add">
+            </div>
+        </form>
+    </div>
+</div>

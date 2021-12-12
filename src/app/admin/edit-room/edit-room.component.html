@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <h1>Room Details</h1>
+        <div *ngIf="resultString=='1'" class="alert alert-success">Updated Room Details Correctly</div>
+        <div *ngIf="resultString=='0'" class="alert alert-danger">Failed to Update Room Details</div>
+        <form (ngSubmit)="submit()">
+            <div class="form-group">
+                <label for="seater">Seater</label>
+                <input [(ngModel)]="room.seater" type="text" name="seater" id="seater" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="room">Room No.</label>
+                <input [(ngModel)]="room.roomNumber" type="text" name="room" id="room" class="form-control" readonly="true">
+            </div>
+            <div class="form-group">
+                <label for="fee">Fees</label>
+                <input [(ngModel)]="room.fee" type="text" name="fee" id="fee" class="form-control">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary col-12" type="submit" value="Update">
+            </div>
+        </form>
+    </div>
+</div>
